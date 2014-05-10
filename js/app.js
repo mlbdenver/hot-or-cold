@@ -12,12 +12,13 @@ $(document).ready(function(){
 
     //Accept guess
     $("#guessButton").click(validateGuess);
-    //make enter submit button
-    /*$("#userGuess").keyup(function(event) {
+    /*make enter submit button - this was happening automatically, so I disabled
+    $("#userGuess").keyup(function(event) {
         if(event.keyCode == 13){
             $("#guessButton").click();
         }
     });*/
+
     function validateGuess() {
         var guess = $('#userGuess').val();
         console.log("Guess is " + guess);
@@ -35,27 +36,26 @@ $(document).ready(function(){
         }
         //If all well, compare guess to random
         else compareGuess(+guess); //not sure this goes here
-        console.log("Your guess is " + userGuess);}
-    
-    
-    
-    function compareGuess(guess) {
-        var diff = guess - target;
-        if (diff > 50) {
-            console.log("Diff greater than 50");
-        }
-        else if (diff < 40) {
-            console.log("Diff less than 40");
-        }
-        else if (diff < 25) {
-            console.log("Diff less than 25");
-        }
-        else if (diff < 10) {
-            console.log("Diff less than 10");
-        }
+        console.log("Your guess is " + userGuess);
+        addguess(guess);
     }
-    compareGuess(guess);
-
+    
+    
+    var diff = guess - target;
+    if (diff > 50) {
+        console.log("Diff greater than 50");
+    }
+    else if (diff < 40) {
+        console.log("Diff less than 40");
+    }
+    else if (diff < 25) {
+        console.log("Diff less than 25");
+    }
+    else if (diff < 10) {
+        console.log("Diff less than 10");
+    }
+   
+    
     function addGuess() {
         numGuesses++;
         $('#guessList').apend("<li>" + guess + "</li>");
