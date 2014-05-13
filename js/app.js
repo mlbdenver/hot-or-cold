@@ -12,16 +12,6 @@ $(document).ready(function() {
     var target = Math.floor((Math.random() * 100) + 1);
     console.log("The random number is " + target);
 
-    //Accept guess
-    $("#guessButton").click(validateGuess);
-
-    /*make enter submit button - this was happening automatically, so I disabled
-    $("#userGuess").keyup(function(event) {
-        if(event.keyCode == 13){
-            $("#guessButton").click();
-        }
-    });*/
-
     function validateGuess() {
         guess = $('#userGuess').val();
         console.log("Guess is " + guess);
@@ -44,6 +34,18 @@ $(document).ready(function() {
             console.log("Your guess is " + guess);
             //}
     }
+
+    //Accept guess
+    $("#guessButton").click(validateGuess);
+        console.log("The guess is " + guess);
+    /*make enter submit button - this was happening automatically, so I disabled
+    $("#userGuess").keyup(function(event) {
+        if(event.keyCode == 13){
+            $("#guessButton").click();
+        }
+    });*/
+
+    
     
     function compareGuess(x) {
         diff = x - target;
