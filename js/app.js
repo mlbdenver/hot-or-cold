@@ -10,7 +10,7 @@ $(document).ready(function() {
    
     //Generate random number and assign to variable
     var target = Math.floor((Math.random() * 100) + 1);
-    console.log("Your random number is " + target);
+    console.log("The random number is " + target);
 
     //Accept guess
     $("#guessButton").click(validateGuess);
@@ -45,8 +45,8 @@ $(document).ready(function() {
             //}
     }
     
-    function compareGuess(guess) {
-        diff = guess - target;
+    function compareGuess(x) {
+        diff = x - target;
             if (diff === 0) {
                 console.log("Yay!!!!!");
             }
@@ -64,7 +64,7 @@ $(document).ready(function() {
             }
             numGuesses++;
             console.log("The number of total guesses is " + numGuesses);
-            $('#guessList').append("<li>" + guess + "</li>");
+            $('#guessList').append("<li>" + x + "</li>");
             
         }
    });
